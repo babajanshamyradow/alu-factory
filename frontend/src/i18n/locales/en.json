@@ -1,0 +1,113 @@
+{
+  "nav": { "home": "Home", "catalog": "Catalog", "about": "About us", "contact": "Contact", "menu": "Menu", "close": "Close" },
+  "common": {
+    "viewAll": "View all",
+    "details": "Details",
+    "learnMore": "Learn more",
+    "backToCatalog": "Back to catalog",
+    "requestQuote": "Request a quote",
+    "error": "Something went wrong while loading. Please try again.",
+    "retry": "Try again",
+    "backToTop": "Back to top",
+    "language": "Language",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "home": {
+    "heroTitle": "Aluminium solutions built to last",
+    "heroSubtitle": "Profiles, systems and custom products — from design to delivery.",
+    "exploreCatalog": "Explore catalog",
+    "contactUs": "Contact us",
+    "scroll": "Scroll",
+    "statProducts": "products",
+    "statCategories": "categories",
+    "featuresEyebrow": "Why us",
+    "featuresTitle": "Production you can rely on",
+    "features": {
+      "precision": { "title": "Precision", "text": "Modern equipment and strict tolerances on every profile we make." },
+      "quality": { "title": "Quality control", "text": "Every batch is checked before it leaves the factory." },
+      "delivery": { "title": "On-time delivery", "text": "Clear lead times and reliable shipping to your site." },
+      "support": { "title": "Expert support", "text": "Our engineers help you pick the right solution for the job." }
+    },
+    "categoriesEyebrow": "Catalog",
+    "categoriesTitle": "Product categories",
+    "featuredEyebrow": "Featured",
+    "featuredTitle": "Our best products",
+    "latestTitle": "Products",
+    "aboutEyebrow": "About us",
+    "aboutFallback": "We are an aluminium factory producing high-quality profiles and products for construction and industry.",
+    "ctaTitle": "Have a project in mind?",
+    "ctaText": "Tell us what you need — we will get back to you with a solution and a price."
+  },
+  "catalog": {
+    "eyebrow": "Catalog",
+    "title": "Our products",
+    "subtitle": "Browse the full range of our production.",
+    "search": "Search products…",
+    "all": "All",
+    "found": "No products | {n} product | {n} products",
+    "empty": "Nothing found",
+    "emptyText": "Try another category or search term.",
+    "reset": "Reset filters",
+    "loadMore": "Load more",
+    "productsCount": "no products | {n} product | {n} products"
+  },
+  "product": {
+    "home": "Home",
+    "description": "Description",
+    "related": "Related products",
+    "notFound": "Product not found",
+    "notFoundText": "It may have been removed or is no longer available.",
+    "askTitle": "Interested in this product?",
+    "askText": "Send us a request — we will reply with price and lead time.",
+    "quoteMessage": "Hello! I am interested in \"{name}\". Please send me the price and delivery terms."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk",
+    "subtitle": "Write to us and our team will get back to you shortly.",
+    "name": "Your name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "hint": "Please leave an email or a phone number so we can reply.",
+    "send": "Send message",
+    "sending": "Sending…",
+    "successTitle": "Message sent!",
+    "successText": "Thank you. We will contact you as soon as possible.",
+    "sendAnother": "Send another message",
+    "infoTitle": "Contact details",
+    "address": "Address",
+    "map": "Map",
+    "errors": {
+      "contact-name-invalid": "Please enter your name.",
+      "contact-email-invalid": "Please enter a valid email.",
+      "contact-phone-invalid": "Please enter a valid phone number.",
+      "contact-email-or-phone-required": "Please leave an email or a phone number.",
+      "contact-message-invalid": "Please write a message (up to 5000 characters).",
+      "contact-rate-limited": "Too many messages. Please try again later.",
+      "network-error": "No connection to the server. Please try again.",
+      "generic": "Could not send the message. Please try again."
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Who we are",
+    "story": "Our story",
+    "valuesTitle": "What we stand for",
+    "values": {
+      "quality": { "title": "Quality", "text": "We use certified raw materials and control every production step." },
+      "innovation": { "title": "Innovation", "text": "We invest in modern technology to make better products." },
+      "partnership": { "title": "Partnership", "text": "We build long-term relationships with our clients." }
+    },
+    "gallery": "Gallery",
+    "contactsTitle": "Get in touch"
+  },
+  "footer": {
+    "tagline": "Aluminium profiles and products of reliable quality.",
+    "navigation": "Navigation",
+    "contacts": "Contacts",
+    "rights": "All rights reserved."
+  },
+  "notFound": { "title": "Page not found", "text": "The page you are looking for does not exist.", "home": "Go to home page" }
+}

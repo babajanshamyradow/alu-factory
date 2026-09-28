@@ -1,0 +1,113 @@
+{
+  "nav": { "home": "Ana sayfa", "catalog": "Katalog", "about": "Hakkımızda", "contact": "İletişim", "menu": "Menü", "close": "Kapat" },
+  "common": {
+    "viewAll": "Tümünü gör",
+    "details": "Detaylar",
+    "learnMore": "Daha fazla",
+    "backToCatalog": "Kataloğa dön",
+    "requestQuote": "Fiyat teklifi al",
+    "error": "Veriler yüklenemedi. Lütfen tekrar deneyin.",
+    "retry": "Tekrar dene",
+    "backToTop": "Yukarı",
+    "language": "Dil",
+    "prev": "Önceki",
+    "next": "Sonraki"
+  },
+  "home": {
+    "heroTitle": "Uzun ömürlü alüminyum çözümleri",
+    "heroSubtitle": "Profiller, sistemler ve özel ürünler — tasarımdan teslimata kadar.",
+    "exploreCatalog": "Kataloğu incele",
+    "contactUs": "Bize ulaşın",
+    "scroll": "Kaydır",
+    "statProducts": "ürün",
+    "statCategories": "kategori",
+    "featuresEyebrow": "Neden biz",
+    "featuresTitle": "Güvenebileceğiniz üretim",
+    "features": {
+      "precision": { "title": "Hassasiyet", "text": "Modern ekipman ve her profilde sıkı toleranslar." },
+      "quality": { "title": "Kalite kontrol", "text": "Her parti fabrikadan çıkmadan önce kontrol edilir." },
+      "delivery": { "title": "Zamanında teslimat", "text": "Net üretim süreleri ve şantiyenize güvenilir sevkiyat." },
+      "support": { "title": "Uzman destek", "text": "Mühendislerimiz işinize uygun çözümü seçmenize yardımcı olur." }
+    },
+    "categoriesEyebrow": "Katalog",
+    "categoriesTitle": "Ürün kategorileri",
+    "featuredEyebrow": "Öne çıkanlar",
+    "featuredTitle": "En iyi ürünlerimiz",
+    "latestTitle": "Ürünler",
+    "aboutEyebrow": "Hakkımızda",
+    "aboutFallback": "İnşaat ve sanayi için yüksek kaliteli profil ve ürünler üreten bir alüminyum fabrikasıyız.",
+    "ctaTitle": "Aklınızda bir proje mi var?",
+    "ctaText": "İhtiyacınızı anlatın — size bir çözüm ve fiyat sunalım."
+  },
+  "catalog": {
+    "eyebrow": "Katalog",
+    "title": "Ürünlerimiz",
+    "subtitle": "Üretimimizin tüm yelpazesine göz atın.",
+    "search": "Ürün ara…",
+    "all": "Tümü",
+    "found": "Ürün yok | {n} ürün | {n} ürün",
+    "empty": "Hiçbir şey bulunamadı",
+    "emptyText": "Başka bir kategori veya arama terimi deneyin.",
+    "reset": "Filtreleri sıfırla",
+    "loadMore": "Daha fazla göster",
+    "productsCount": "ürün yok | {n} ürün | {n} ürün"
+  },
+  "product": {
+    "home": "Ana sayfa",
+    "description": "Açıklama",
+    "related": "Benzer ürünler",
+    "notFound": "Ürün bulunamadı",
+    "notFoundText": "Kaldırılmış veya artık mevcut olmayabilir.",
+    "askTitle": "Bu ürünle ilgileniyor musunuz?",
+    "askText": "Talep gönderin — fiyat ve teslim süresiyle dönüş yapalım.",
+    "quoteMessage": "Merhaba! \"{name}\" ürünüyle ilgileniyorum. Lütfen fiyat ve teslimat koşullarını gönderin."
+  },
+  "contact": {
+    "eyebrow": "İletişim",
+    "title": "Konuşalım",
+    "subtitle": "Bize yazın, ekibimiz en kısa sürede size dönsün.",
+    "name": "Adınız",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesaj",
+    "hint": "Size dönebilmemiz için e-posta veya telefon bırakın.",
+    "send": "Mesaj gönder",
+    "sending": "Gönderiliyor…",
+    "successTitle": "Mesaj gönderildi!",
+    "successText": "Teşekkürler. En kısa sürede sizinle iletişime geçeceğiz.",
+    "sendAnother": "Yeni mesaj gönder",
+    "infoTitle": "İletişim bilgileri",
+    "address": "Adres",
+    "map": "Harita",
+    "errors": {
+      "contact-name-invalid": "Lütfen adınızı girin.",
+      "contact-email-invalid": "Lütfen geçerli bir e-posta girin.",
+      "contact-phone-invalid": "Lütfen geçerli bir telefon numarası girin.",
+      "contact-email-or-phone-required": "Lütfen e-posta veya telefon bırakın.",
+      "contact-message-invalid": "Lütfen bir mesaj yazın (en fazla 5000 karakter).",
+      "contact-rate-limited": "Çok fazla mesaj. Lütfen daha sonra tekrar deneyin.",
+      "network-error": "Sunucuya bağlanılamadı. Lütfen tekrar deneyin.",
+      "generic": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+    }
+  },
+  "about": {
+    "eyebrow": "Hakkımızda",
+    "title": "Biz kimiz",
+    "story": "Hikayemiz",
+    "valuesTitle": "Değerlerimiz",
+    "values": {
+      "quality": { "title": "Kalite", "text": "Sertifikalı ham madde kullanıyor, her üretim adımını kontrol ediyoruz." },
+      "innovation": { "title": "İnovasyon", "text": "Daha iyi ürünler için modern teknolojiye yatırım yapıyoruz." },
+      "partnership": { "title": "Ortaklık", "text": "Müşterilerimizle uzun vadeli ilişkiler kuruyoruz." }
+    },
+    "gallery": "Galeri",
+    "contactsTitle": "Bize ulaşın"
+  },
+  "footer": {
+    "tagline": "Güvenilir kalitede alüminyum profil ve ürünler.",
+    "navigation": "Menü",
+    "contacts": "İletişim",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "notFound": { "title": "Sayfa bulunamadı", "text": "Aradığınız sayfa mevcut değil.", "home": "Ana sayfaya git" }
+}

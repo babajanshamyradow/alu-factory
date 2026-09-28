@@ -1,0 +1,113 @@
+{
+  "nav": { "home": "Baş sahypa", "catalog": "Katalog", "about": "Biz barada", "contact": "Habarlaşmak", "menu": "Menýu", "close": "Ýap" },
+  "common": {
+    "viewAll": "Hemmesini gör",
+    "details": "Giňişleýin",
+    "learnMore": "Has köp bil",
+    "backToCatalog": "Kataloga dolan",
+    "requestQuote": "Bahany sora",
+    "error": "Maglumatlary ýükläp bolmady. Täzeden synanyşyň.",
+    "retry": "Täzeden synanyş",
+    "backToTop": "Ýokaryk",
+    "language": "Dil",
+    "prev": "Öňki",
+    "next": "Indiki"
+  },
+  "home": {
+    "heroTitle": "Uzak ýyllara niýetlenen alýumin çözgütleri",
+    "heroSubtitle": "Profiller, ulgamlar we sargyt boýunça önümler — taslamadan eltip bermäge çenli.",
+    "exploreCatalog": "Katalogy gör",
+    "contactUs": "Biz bilen habarlaşyň",
+    "scroll": "Aşak",
+    "statProducts": "önüm",
+    "statCategories": "kategoriýa",
+    "featuresEyebrow": "Näme üçin biz",
+    "featuresTitle": "Ynamdar önümçilik",
+    "features": {
+      "precision": { "title": "Takyklyk", "text": "Häzirki zaman enjamlary we her profil üçin berk talaplar." },
+      "quality": { "title": "Hil gözegçiligi", "text": "Her tapgyr zawoddan çykmazdan öň barlanylýar." },
+      "delivery": { "title": "Wagtynda eltip bermek", "text": "Düşnükli möhletler we desga ygtybarly eltip bermek." },
+      "support": { "title": "Hünärmen goldawy", "text": "Inženerlerimiz size laýyk çözgüdi saýlamaga kömek eder." }
+    },
+    "categoriesEyebrow": "Katalog",
+    "categoriesTitle": "Önüm kategoriýalary",
+    "featuredEyebrow": "Maslahat berýäris",
+    "featuredTitle": "Iň gowy önümlerimiz",
+    "latestTitle": "Önümler",
+    "aboutEyebrow": "Biz barada",
+    "aboutFallback": "Biz gurluşyk we senagat üçin ýokary hilli profilleri we önümleri öndürýän alýumin zawody.",
+    "ctaTitle": "Taslamaňyz barmy?",
+    "ctaText": "Näme gerekdigini aýdyň — biz size çözgüt we baha hödürläris."
+  },
+  "catalog": {
+    "eyebrow": "Katalog",
+    "title": "Önümlerimiz",
+    "subtitle": "Önümçiligimiziň doly görnüşi.",
+    "search": "Önüm gözle…",
+    "all": "Hemmesi",
+    "found": "Önüm ýok | {n} önüm | {n} önüm",
+    "empty": "Hiç zat tapylmady",
+    "emptyText": "Başga kategoriýa ýa-da söz synap görüň.",
+    "reset": "Süzgüçleri arassala",
+    "loadMore": "Ýene görkez",
+    "productsCount": "önüm ýok | {n} önüm | {n} önüm"
+  },
+  "product": {
+    "home": "Baş sahypa",
+    "description": "Düşündiriş",
+    "related": "Meňzeş önümler",
+    "notFound": "Önüm tapylmady",
+    "notFoundText": "Ol aýrylan ýa-da indi elýeterli däl bolmagy mümkin.",
+    "askTitle": "Bu önüm gyzyklandyrdymy?",
+    "askText": "Haýyş iberiň — biz baha we eltip bermek möhletini habar bereris.",
+    "quoteMessage": "Salam! Meni «{name}» gyzyklandyrýar. Bahasyny we eltip bermek şertlerini iberiň."
+  },
+  "contact": {
+    "eyebrow": "Habarlaşmak",
+    "title": "Geliň, maslahatlaşalyň",
+    "subtitle": "Bize ýazyň, toparymyz tiz wagtda siz bilen habarlaşar.",
+    "name": "Adyňyz",
+    "email": "Email",
+    "phone": "Telefon",
+    "message": "Hat",
+    "hint": "Jogap bermegimiz üçin email ýa-da telefon belgiňizi galdyryň.",
+    "send": "Ibermek",
+    "sending": "Iberilýär…",
+    "successTitle": "Hat iberildi!",
+    "successText": "Sag boluň. Biz siz bilen mümkin boldugyça tiz habarlaşarys.",
+    "sendAnother": "Ýene hat ibermek",
+    "infoTitle": "Habarlaşmak üçin maglumatlar",
+    "address": "Salgy",
+    "map": "Karta",
+    "errors": {
+      "contact-name-invalid": "Adyňyzy giriziň.",
+      "contact-email-invalid": "Dogry email giriziň.",
+      "contact-phone-invalid": "Dogry telefon belgisini giriziň.",
+      "contact-email-or-phone-required": "Email ýa-da telefon belgiňizi galdyryň.",
+      "contact-message-invalid": "Hat ýazyň (5000 nyşana çenli).",
+      "contact-rate-limited": "Gaty köp hat iberildi. Soňrak synanyşyň.",
+      "network-error": "Serwer bilen baglanyşyk ýok. Täzeden synanyşyň.",
+      "generic": "Haty iberip bolmady. Täzeden synanyşyň."
+    }
+  },
+  "about": {
+    "eyebrow": "Biz barada",
+    "title": "Biz kim?",
+    "story": "Biziň taryhymyz",
+    "valuesTitle": "Gymmatlyklarymyz",
+    "values": {
+      "quality": { "title": "Hil", "text": "Sertifikatly çig mal ulanýarys we önümçiligiň her tapgyryna gözegçilik edýäris." },
+      "innovation": { "title": "Innowasiýa", "text": "Has gowy önüm öndürmek üçin häzirki zaman tehnologiýalara maýa goýýarys." },
+      "partnership": { "title": "Hyzmatdaşlyk", "text": "Müşderilerimiz bilen uzak möhletli gatnaşyklary gurýarys." }
+    },
+    "gallery": "Galereýa",
+    "contactsTitle": "Biz bilen habarlaşyň"
+  },
+  "footer": {
+    "tagline": "Ygtybarly hilli alýumin profilleri we önümleri.",
+    "navigation": "Nawigasiýa",
+    "contacts": "Habarlaşmak",
+    "rights": "Ähli hukuklar goralan."
+  },
+  "notFound": { "title": "Sahypa tapylmady", "text": "Gözleýän sahypaňyz ýok.", "home": "Baş sahypa geç" }
+}

@@ -1,0 +1,113 @@
+{
+  "nav": { "home": "Startseite", "catalog": "Katalog", "about": "Über uns", "contact": "Kontakt", "menu": "Menü", "close": "Schließen" },
+  "common": {
+    "viewAll": "Alle ansehen",
+    "details": "Details",
+    "learnMore": "Mehr erfahren",
+    "backToCatalog": "Zurück zum Katalog",
+    "requestQuote": "Angebot anfordern",
+    "error": "Daten konnten nicht geladen werden. Bitte erneut versuchen.",
+    "retry": "Erneut versuchen",
+    "backToTop": "Nach oben",
+    "language": "Sprache",
+    "prev": "Zurück",
+    "next": "Weiter"
+  },
+  "home": {
+    "heroTitle": "Aluminiumlösungen für Generationen",
+    "heroSubtitle": "Profile, Systeme und Sonderanfertigungen — von der Planung bis zur Lieferung.",
+    "exploreCatalog": "Katalog entdecken",
+    "contactUs": "Kontakt aufnehmen",
+    "scroll": "Scrollen",
+    "statProducts": "Produkte",
+    "statCategories": "Kategorien",
+    "featuresEyebrow": "Warum wir",
+    "featuresTitle": "Produktion, auf die Sie sich verlassen können",
+    "features": {
+      "precision": { "title": "Präzision", "text": "Moderne Anlagen und enge Toleranzen bei jedem Profil." },
+      "quality": { "title": "Qualitätskontrolle", "text": "Jede Charge wird geprüft, bevor sie das Werk verlässt." },
+      "delivery": { "title": "Pünktliche Lieferung", "text": "Klare Lieferzeiten und zuverlässiger Versand zu Ihrer Baustelle." },
+      "support": { "title": "Fachberatung", "text": "Unsere Ingenieure helfen Ihnen, die richtige Lösung zu finden." }
+    },
+    "categoriesEyebrow": "Katalog",
+    "categoriesTitle": "Produktkategorien",
+    "featuredEyebrow": "Empfohlen",
+    "featuredTitle": "Unsere besten Produkte",
+    "latestTitle": "Produkte",
+    "aboutEyebrow": "Über uns",
+    "aboutFallback": "Wir sind ein Aluminiumwerk, das hochwertige Profile und Produkte für Bau und Industrie herstellt.",
+    "ctaTitle": "Sie planen ein Projekt?",
+    "ctaText": "Sagen Sie uns, was Sie brauchen — wir melden uns mit einer Lösung und einem Preis."
+  },
+  "catalog": {
+    "eyebrow": "Katalog",
+    "title": "Unsere Produkte",
+    "subtitle": "Entdecken Sie unser gesamtes Sortiment.",
+    "search": "Produkte suchen…",
+    "all": "Alle",
+    "found": "Keine Produkte | {n} Produkt | {n} Produkte",
+    "empty": "Nichts gefunden",
+    "emptyText": "Versuchen Sie eine andere Kategorie oder einen anderen Suchbegriff.",
+    "reset": "Filter zurücksetzen",
+    "loadMore": "Mehr laden",
+    "productsCount": "keine Produkte | {n} Produkt | {n} Produkte"
+  },
+  "product": {
+    "home": "Startseite",
+    "description": "Beschreibung",
+    "related": "Ähnliche Produkte",
+    "notFound": "Produkt nicht gefunden",
+    "notFoundText": "Es wurde möglicherweise entfernt oder ist nicht mehr verfügbar.",
+    "askTitle": "Interesse an diesem Produkt?",
+    "askText": "Senden Sie uns eine Anfrage — wir antworten mit Preis und Lieferzeit.",
+    "quoteMessage": "Hallo! Ich interessiere mich für „{name}“. Bitte senden Sie mir Preis und Lieferbedingungen."
+  },
+  "contact": {
+    "eyebrow": "Kontakt",
+    "title": "Lassen Sie uns sprechen",
+    "subtitle": "Schreiben Sie uns — unser Team meldet sich in Kürze.",
+    "name": "Ihr Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Nachricht",
+    "hint": "Bitte hinterlassen Sie eine E-Mail oder Telefonnummer, damit wir antworten können.",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "successTitle": "Nachricht gesendet!",
+    "successText": "Vielen Dank. Wir melden uns so schnell wie möglich.",
+    "sendAnother": "Weitere Nachricht senden",
+    "infoTitle": "Kontaktdaten",
+    "address": "Adresse",
+    "map": "Karte",
+    "errors": {
+      "contact-name-invalid": "Bitte geben Sie Ihren Namen ein.",
+      "contact-email-invalid": "Bitte geben Sie eine gültige E-Mail ein.",
+      "contact-phone-invalid": "Bitte geben Sie eine gültige Telefonnummer ein.",
+      "contact-email-or-phone-required": "Bitte hinterlassen Sie eine E-Mail oder Telefonnummer.",
+      "contact-message-invalid": "Bitte schreiben Sie eine Nachricht (bis zu 5000 Zeichen).",
+      "contact-rate-limited": "Zu viele Nachrichten. Bitte versuchen Sie es später erneut.",
+      "network-error": "Keine Verbindung zum Server. Bitte erneut versuchen.",
+      "generic": "Die Nachricht konnte nicht gesendet werden. Bitte erneut versuchen."
+    }
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Wer wir sind",
+    "story": "Unsere Geschichte",
+    "valuesTitle": "Wofür wir stehen",
+    "values": {
+      "quality": { "title": "Qualität", "text": "Wir verwenden zertifizierte Rohstoffe und kontrollieren jeden Produktionsschritt." },
+      "innovation": { "title": "Innovation", "text": "Wir investieren in moderne Technik für bessere Produkte." },
+      "partnership": { "title": "Partnerschaft", "text": "Wir pflegen langfristige Beziehungen zu unseren Kunden." }
+    },
+    "gallery": "Galerie",
+    "contactsTitle": "Kontakt aufnehmen"
+  },
+  "footer": {
+    "tagline": "Aluminiumprofile und -produkte in verlässlicher Qualität.",
+    "navigation": "Navigation",
+    "contacts": "Kontakt",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "notFound": { "title": "Seite nicht gefunden", "text": "Die gesuchte Seite existiert nicht.", "home": "Zur Startseite" }
+}

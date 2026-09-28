@@ -1,0 +1,150 @@
+/*
+ * Global theme for the admin console.
+ *
+ * Element Plus is themed through its CSS variables (--el-*) so every
+ * component (buttons, inputs, tables, dialogs…) picks up the brand look
+ * without per-component overrides. App-specific tokens live under --af-*.
+ * Dark mode = `html.dark` (see composables/useTheme.js) on top of
+ * element-plus/theme-chalk/dark/css-vars.css.
+ */
+
+:root {
+  /* Brand */
+  --el-color-primary: #4361ee;
+  --el-color-primary-light-3: #7b90f3;
+  --el-color-primary-light-5: #a1b0f7;
+  --el-color-primary-light-7: #c7d0fa;
+  --el-color-primary-light-8: #d9dffc;
+  --el-color-primary-light-9: #eceffe;
+  --el-color-primary-dark-2: #364ebe;
+
+  /* Shape & type */
+  --el-border-radius-base: 10px;
+  --el-border-radius-small: 8px;
+  --el-border-radius-round: 999px;
+  --el-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --el-component-size: 36px;
+  --el-component-size-large: 44px;
+
+  /* Surfaces */
+  --el-bg-color-page: #f4f6fb;
+  --el-border-color-lighter: #e8ebf3;
+  --el-box-shadow-light: 0 4px 16px rgba(20, 30, 70, 0.06);
+
+  --af-sidebar-bg: #0f1629;
+  --af-sidebar-bg-2: #151e38;
+  --af-sidebar-text: #97a3c2;
+  --af-sidebar-text-active: #ffffff;
+  --af-sidebar-hover: rgba(255, 255, 255, 0.06);
+  --af-sidebar-border: rgba(255, 255, 255, 0.06);
+
+  --af-header-bg: rgba(255, 255, 255, 0.78);
+  --af-card-bg: #ffffff;
+  --af-card-border: #e8ebf3;
+  --af-card-shadow: 0 1px 2px rgba(20, 30, 70, 0.04), 0 8px 24px rgba(20, 30, 70, 0.05);
+
+  --af-gradient: linear-gradient(135deg, #4361ee 0%, #3a86ff 55%, #4cc9f0 100%);
+  --af-radius-lg: 16px;
+}
+
+html.dark {
+  --el-color-primary: #5b77f5;
+  --el-color-primary-light-3: #3d51a8;
+  --el-color-primary-light-5: #303f80;
+  --el-color-primary-light-7: #232c55;
+  --el-color-primary-light-8: #1e2442;
+  --el-color-primary-light-9: #191d30;
+  --el-color-primary-dark-2: #8196f7;
+
+  --el-bg-color-page: #0b0f1c;
+  --el-bg-color: #121829;
+  --el-bg-color-overlay: #161d31;
+  --el-fill-color-blank: #121829;
+  --el-border-color: #2a3350;
+  --el-border-color-light: #232b45;
+  --el-border-color-lighter: #1e2640;
+
+  --af-sidebar-bg: #0a0e1a;
+  --af-sidebar-bg-2: #0e1324;
+  --af-sidebar-border: rgba(255, 255, 255, 0.05);
+
+  --af-header-bg: rgba(18, 24, 41, 0.75);
+  --af-card-bg: #121829;
+  --af-card-border: #1e2640;
+  --af-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--el-font-family);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--el-text-color-primary);
+  background: var(--el-bg-color-page);
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Reusable card surface for views */
+.af-card {
+  background: var(--af-card-bg);
+  border: 1px solid var(--af-card-border);
+  border-radius: var(--af-radius-lg);
+  box-shadow: var(--af-card-shadow);
+}
+
+/* Element Plus polish */
+.el-card {
+  --el-card-border-radius: var(--af-radius-lg);
+  --el-card-border-color: var(--af-card-border);
+  box-shadow: var(--af-card-shadow) !important;
+}
+.el-button {
+  font-weight: 500;
+}
+.el-button--primary:not(.is-plain):not(.is-text):not(.is-link) {
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.28);
+}
+.el-input__wrapper {
+  transition: box-shadow 0.2s;
+}
+.el-dropdown-menu__item {
+  border-radius: 6px;
+  margin: 0 6px;
+}
+.el-table {
+  --el-table-header-bg-color: var(--el-fill-color-light);
+  border-radius: 12px;
+}
+
+/* Page transition used by the layout's <router-view> */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.page-leave-to {
+  opacity: 0;
+}
+
+::selection {
+  background: var(--el-color-primary-light-7);
+}
