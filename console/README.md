@@ -21,7 +21,7 @@ src/
   api/          # http.js (axios instance) + один файл на ресурс (auth, users, categories, products, contactMessages,
                 #   slider, banners, company, media)
   stores/       # Pinia-сторы (auth.js)
-  i18n/         # vue-i18n + locales/{en,ru,tm,tr,de}.json
+  i18n/         # vue-i18n + locales/{en,ru,tr,de}.json
   router/       # маршруты, guard requiresAuth/guestOnly
   layouts/      # AdminLayout.vue — sidebar + topbar
   views/        # экраны (по одному на ресурс, в подпапке при списке+форме)

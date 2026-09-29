@@ -2,17 +2,15 @@ import { createI18n } from 'vue-i18n'
 
 import en from './locales/en.json'
 import ru from './locales/ru.json'
-import tm from './locales/tm.json'
 import tr from './locales/tr.json'
 import de from './locales/de.json'
 
 // Same set as SystemLang in backend/src/model/enums.py.
-export const SUPPORTED_LOCALES = ['en', 'ru', 'tm', 'tr', 'de']
+export const SUPPORTED_LOCALES = ['en', 'ru', 'tr', 'de']
 
 export const LOCALE_LABELS = {
   en: 'English',
   ru: 'Русский',
-  tm: 'Türkmençe',
   tr: 'Türkçe',
   de: 'Deutsch',
 }
@@ -43,7 +41,7 @@ const i18n = createI18n({
   legacy: false,
   locale: initialLocale(),
   fallbackLocale: 'en',
-  messages: { en, ru, tm, tr, de },
+  messages: { en, ru, tr, de },
   pluralRules: { ru: ruPlural },
 })
 

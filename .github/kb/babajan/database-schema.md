@@ -16,7 +16,7 @@
 | `password` | String(256) | Хэш пароля (`passlib.sha256_crypt`) |
 | `locked` | Boolean | Заблокирован ли аккаунт |
 | `role` | Enum `UserRole` (`superuser`/`admin`/`operator`) | Роль |
-| `lang` | Enum `SystemLang` (`en`/`ru`/`tm`/`tr`/`de`) | Язык интерфейса (используется как язык по умолчанию в админ-панели) |
+| `lang` | Enum `SystemLang` (`en`/`ru`/`tr`/`de`) | Язык интерфейса (используется как язык по умолчанию в админ-панели) |
 | `email` | String(256), nullable | Email |
 | `access_token` / `refresh_token` / `access_token_expiration` | — | API-токены (для мобильных/внешних клиентов; веб-админка использует cookie-сессию, не эти поля) |
 | `firebase_token` | Text, nullable | Push-токен (не используется в alu-factory) |
@@ -185,7 +185,7 @@ Join-таблица товар↔медиа (товар может иметь н
 ## Enum'ы (`backend/src/model/enums.py`)
 
 - `UserRole`: `superuser`, `admin`, `operator`
-- `SystemLang`: `en`, `ru`, `tm`, `tr`, `de`
+- `SystemLang`: `en`, `ru`, `tr`, `de`
 - `MediaType`: `image`, `video`
 - `ContactStatus`: `new`, `read`, `archived`
 - `AuditAction`: `create`, `update`, `delete`, `login`, `login_failed`, `logout`, `contact_submitted`

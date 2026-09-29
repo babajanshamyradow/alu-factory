@@ -23,7 +23,7 @@ export function formatDateTime(value, locale) {
   try {
     return new Intl.DateTimeFormat(locale, { dateStyle: 'short', timeStyle: 'short' }).format(date)
   } catch {
-    // e.g. 'tm' is not a BCP 47 tag Intl knows.
+    // Unknown locale tag — fall back to the browser default.
     return date.toLocaleString()
   }
 }

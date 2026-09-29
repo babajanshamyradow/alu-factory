@@ -7,7 +7,6 @@ import { SUPPORTED_LOCALES, setStoredLocale } from '@/i18n'
 const LANG_LABELS = {
   en: 'English',
   ru: 'Русский',
-  tm: 'Türkmençe',
   tr: 'Türkçe',
   de: 'Deutsch',
 }

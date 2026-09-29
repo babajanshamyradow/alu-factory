@@ -14,7 +14,7 @@ from backend.src.model import media_access
 LINK_URL_RE = re.compile(r'^(https?://[^\s]+|/[^\s]*)$')
 SLUG_RE = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 
-# Letters NFKD can't fold to ASCII: Cyrillic (ru/tm names) plus Turkish ı
+# Letters NFKD can't fold to ASCII: Cyrillic (ru names) plus Turkish ı
 # and German ß. Everything else with diacritics (ş, ň, ý, ä, ü...) is folded
 # by NFKD below.
 _TRANSLIT = dict(zip(

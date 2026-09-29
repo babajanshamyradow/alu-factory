@@ -1,0 +1,17 @@
+[Unit]
+Description=Alu Factory CRM API (admin)
+After=network.target postgresql.service redis-server.service
+
+[Service]
+User=alu
+Group=alu
+WorkingDirectory=/opt/alu-factory
+ExecStart=/opt/alu-factory/backend/venv/bin/gunicorn \
+    --bind 127.0.0.1:8888 --workers 1 --threads 4 \
+    --max-requests 1000 --max-requests-jitter 100 --timeout 120 \
+    backend.src.crm.web:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

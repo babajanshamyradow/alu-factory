@@ -1,7 +1,7 @@
 # Alu Factory — public website
 
 Vue 3 + Vite site for visitors: home (slider, banners), catalog, product page, contact form, about us.
-UI languages: every `SystemLang` value — `src/i18n/locales/{en,ru,tm,tr,de}.json` (add new strings to all five).
+UI languages: every `SystemLang` value — `src/i18n/locales/{en,ru,tr,de}.json` (add new strings to all four).
 
 ## Run
 

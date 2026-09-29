@@ -21,8 +21,8 @@ def app_create(name, config):
     a.config['SESSION_REDIS'] = redis.from_url(config['ALU_FACTORY'].get('REDIS_URI'))
     a.config['SESSION_USE_SIGNER'] = True
     a.config['SESSION_COOKIE_HTTPONLY'] = True
-    # FOR SSL only!!!
-    a.config['SESSION_COOKIE_SECURE'] = False
+    # FOR SSL only!!! (true in production config.ini)
+    a.config['SESSION_COOKIE_SECURE'] = config['ALU_FACTORY'].getboolean('SESSION_COOKIE_SECURE', False)
     a.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=5)
 
     # App Params
@@ -47,7 +47,7 @@ def app_create(name, config):
     a.config['COMPANY_NAME'] = config['ALU_FACTORY'].get('COMPANY_NAME')
 
     a.secret_key = config['ALU_FACTORY'].get('SECRET_KEY')
-    a.debug = True
+    a.debug = config['ALU_FACTORY'].getboolean('DEBUG', True)
 
     db.init_app(a)
     a.db = db
@@ -55,7 +55,6 @@ def app_create(name, config):
 
     # Registering filters
     a.jinja_env.filters['number_to_words'] = number_to_words
-    a.jinja_env.filters['weekday_to_str_tm'] = weekday_to_str_tm
     a.jinja_env.filters['weekday_to_str_ru'] = weekday_to_str_ru
     
     # Registering Blueprints
@@ -126,27 +125,6 @@ def number_to_words(s):
 
     return result
 
-
-def weekday_to_str_tm(day):
-    try :
-        day = int(day)
-    except ValueError:
-        return ""
-
-    weekdays = {
-        1: 'Duşenbe',
-        2: 'Sişenbe',
-        3: 'Çarşenbe',
-        4: 'Penşenbe',
-        5: 'Anna',
-        6: 'Şenbe',
-        7: 'Ýekşenbe'
-    }
-
-    if day in weekdays:
-        return weekdays[day]
-    
-    return ''
 
 def weekday_to_str_ru(day):
     try:

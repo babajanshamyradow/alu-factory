@@ -1,0 +1,17 @@
+[Unit]
+Description=Alu Factory public site API
+After=network.target postgresql.service redis-server.service
+
+[Service]
+User=alu
+Group=alu
+WorkingDirectory=/opt/alu-factory
+ExecStart=/opt/alu-factory/backend/venv/bin/gunicorn \
+    --bind 127.0.0.1:9999 --workers 2 \
+    --max-requests 1000 --max-requests-jitter 100 --timeout 60 \
+    backend.src.sip.web:app
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

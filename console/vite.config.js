@@ -4,7 +4,9 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  // Production build is served under https://baweraluminium.com/admin/ (see DEPLOY.md).
+  base: command === 'build' ? '/admin/' : '/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -33,4 +35,4 @@ export default defineConfig({
       '/api/': { target: 'http://localhost:8888', changeOrigin: true },
     },
   },
-})
+}))

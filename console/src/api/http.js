@@ -2,6 +2,8 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 
 const http = axios.create({
+  // Empty in dev (Vite proxy); '/admin-api' in production (.env.production).
+  baseURL: import.meta.env.VITE_API_BASE || '',
   withCredentials: true,
   headers: { 'Content-Type': 'application/json' },
 })

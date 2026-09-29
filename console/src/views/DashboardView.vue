@@ -18,7 +18,7 @@ const greetingKey = computed(() => {
 })
 
 const today = computed(() =>
-  new Intl.DateTimeFormat(locale.value === 'tm' ? 'tk' : locale.value, {
+  new Intl.DateTimeFormat(locale.value, {
     weekday: 'long',
     day: 'numeric',
     month: 'long',

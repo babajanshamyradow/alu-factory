@@ -9,7 +9,6 @@ class UserRole(enum.Enum):
 class SystemLang(enum.Enum):
     en = 'en'
     ru = 'ru'
-    tm = 'tm'
     tr = 'tr'
     de = 'de'
 
