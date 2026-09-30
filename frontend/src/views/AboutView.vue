@@ -60,6 +60,22 @@ const description = computed(() => company.value.description || t('home.aboutFal
       </div>
     </section>
 
+    <!-- Brand & quality -->
+    <section class="section section--soft">
+      <div class="container brand">
+        <div>
+          <p v-reveal class="eyebrow">{{ t('brand.eyebrow') }}</p>
+          <AnimatedTitle tag="h2" class="title-lg" :text="t('brand.title')" />
+        </div>
+        <div class="brand__body">
+          <p v-reveal="100" class="prose">{{ t('brand.p1') }}</p>
+          <p v-reveal="200" class="prose">{{ t('brand.p2') }}</p>
+          <p v-reveal="300" class="brand__cta">{{ t('brand.cta') }}</p>
+          <p v-reveal="400" class="brand__slogan text-gradient">{{ t('brand.slogan') }}</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Values -->
     <section class="section section--dark values">
       <div class="values__glow" />
@@ -200,6 +216,33 @@ const description = computed(() => company.value.description || t('home.aboutFal
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+/* Brand & quality */
+.brand {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: clamp(32px, 6vw, 100px);
+  align-items: start;
+}
+
+.brand__body {
+  display: grid;
+  gap: 20px;
+}
+
+.brand__cta {
+  margin-top: 12px;
+  padding-top: 28px;
+  border-top: 1px solid var(--c-line);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 700;
+}
+
+.brand__slogan {
+  font-family: var(--f-display);
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.3;
 }
 
 /* Values */
@@ -360,7 +403,8 @@ const description = computed(() => company.value.description || t('home.aboutFal
 }
 
 @media (max-width: 900px) {
-  .story {
+  .story,
+  .brand {
     grid-template-columns: 1fr;
   }
 

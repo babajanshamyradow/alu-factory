@@ -103,6 +103,14 @@
     "gallery": "Galeri",
     "contactsTitle": "Bize ulaşın"
   },
+  "brand": {
+    "eyebrow": "Markamız ve Kalitemiz",
+    "title": "Taviz vermeyen Avrupa kalite standartları",
+    "p1": "Bawer, Almanya'da tescilli bir markadır ve tek bir ilkeye dayanır: taviz vermeyen Avrupa kalite standartları. Alüminyum profillerimiz, markamızın katı kalite gereklilikleri doğrultusunda modern ve yüksek kapasiteli tesislerde üretilir.",
+    "p2": "Her profil, hammadde seçiminden son kontrole kadar üretimin her aşamasında denetlenir; böylece dayanıklılık, ölçü hassasiyeti ve yüzey kalitesi Avrupa pazarının beklentilerini karşılar. Önemli olan ürünün nerede üretildiği değil, hangi standartlarda üretildiğidir. Bawer her ikisinin de sorumluluğunu taşır.",
+    "cta": "Kalitesinin arkasında duran bir markayı seçin.",
+    "slogan": "Bawer: Alman markası. Avrupa standartları. Güvenilir ortaklık."
+  },
   "footer": {
     "tagline": "Güvenilir kalitede alüminyum profil ve ürünler.",
     "navigation": "Menü",

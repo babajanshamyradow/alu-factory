@@ -112,6 +112,19 @@ onMounted(() => {
       </div>
     </section>
 
+    <!-- Brand & quality -->
+    <section class="section brand">
+      <div class="container brand__inner">
+        <p v-reveal class="eyebrow">{{ t('brand.eyebrow') }}</p>
+        <AnimatedTitle tag="h2" class="title-lg" :text="t('brand.title')" />
+        <p v-reveal="150" class="lead brand__text">{{ t('brand.p1') }}</p>
+        <p v-reveal="250" class="brand__slogan text-gradient">{{ t('brand.slogan') }}</p>
+        <RouterLink v-reveal="350" to="/about" class="link-arrow">
+          {{ t('common.learnMore') }} <AppIcon name="arrow" :size="18" />
+        </RouterLink>
+      </div>
+    </section>
+
     <!-- Categories -->
     <section v-if="site.categories.length" class="section">
       <div class="container">
@@ -252,6 +265,25 @@ onMounted(() => {
 }
 
 /* Features */
+.brand__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.brand__text {
+  margin: 24px auto 0;
+  max-width: 760px;
+}
+
+.brand__slogan {
+  margin: 28px 0 32px;
+  font-family: var(--f-display);
+  font-size: clamp(20px, 2vw, 28px);
+  line-height: 1.3;
+}
+
 .features {
   overflow: hidden;
   isolation: isolate;

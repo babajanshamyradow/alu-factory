@@ -103,6 +103,14 @@
     "gallery": "Galerie",
     "contactsTitle": "Kontakt aufnehmen"
   },
+  "brand": {
+    "eyebrow": "Unsere Marke & Qualität",
+    "title": "Europäische Qualitätsstandards ohne Kompromisse",
+    "p1": "Bawer ist eine in Deutschland eingetragene Marke und steht für ein Prinzip: europäische Qualitätsstandards ohne Kompromisse. Unsere Aluminiumprofile werden in modernen, leistungsstarken Produktionsstätten nach den strengen Qualitätsanforderungen unserer Marke gefertigt.",
+    "p2": "Jedes Profil wird in allen Produktionsphasen geprüft, von der Rohstoffauswahl bis zur Endkontrolle, damit Festigkeit, Maßgenauigkeit und Oberflächenqualität den Erwartungen des europäischen Marktes entsprechen. Entscheidend ist nicht, wo ein Produkt gefertigt wird, sondern nach welchen Standards. Dafür steht Bawer ein.",
+    "cta": "Wählen Sie eine Marke, die für ihre Qualität geradesteht.",
+    "slogan": "Bawer: Deutsche Marke. Europäische Standards. Verlässliche Partnerschaft."
+  },
   "footer": {
     "tagline": "Aluminiumprofile und -produkte in verlässlicher Qualität.",
     "navigation": "Navigation",
