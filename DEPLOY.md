@@ -2,8 +2,8 @@
 
 ## 0. Контекст и итоговая схема
 
-- Сервер: Ubuntu 22.04/24.04, **1 ГБ RAM**.
-- `frontend/` и `console/` собираются **только локально на Mac**, на сервер едет готовый `dist/` (Node на сервере не нужен).
+- Сервер: Ubuntu 22.04/24.04.
+- `frontend/` и `console/` собираются **на сервере**: `deploy.sh` заливает исходники (без `node_modules`/`dist`), на сервере выполняется `npm ci && npm run build`, а `dist/` копируется в `/var/www/bawer/`. На сервере нужен Node.js 22 (см. `.nvmrc`).
 - Бэкенд — два Flask-приложения: `crm` (API админки, порт 8888) и `sip` (API публичного сайта, порт 9999), запускаются через gunicorn + systemd.
 - Данные: переносим локальную БД PostgreSQL и папку `backend/media` (~23 МБ).
 
@@ -26,6 +26,8 @@
     media/            # загруженные файлы
     logs/             # логи crm/sip
   deploy/             # nginx/systemd-файлы (rsync с Mac)
+  frontend/           # исходники сайта, собираются на сервере
+  console/            # исходники админки, собираются на сервере
 /var/www/bawer/
   site/               # frontend/dist
   admin/              # console/dist
@@ -200,43 +202,8 @@ WantedBy=multi-user.target
 ```
 Память: 3 процесса gunicorn × ~60–80 МБ + Postgres + Redis + nginx укладываются в 1 ГБ, swap — страховка.
 
-### A10. `deploy/deploy.sh` (новый, запускается с Mac)
-```bash
-#!/usr/bin/env bash
-# Сборка фронтендов локально и выкладка всего на сервер.
-# Использование: SERVER=alu@1.2.3.4 ./deploy/deploy.sh
-set -euo pipefail
-: "${SERVER:?Укажите SERVER=alu@<IP>}"
-cd "$(dirname "$0")/.."
-
-echo "==> Сборка frontend"
-(cd frontend && npm ci && npm run build)
-echo "==> Сборка console"
-(cd console && npm ci && npm run build)
-
-echo "==> Выкладка статики"
-rsync -az --delete frontend/dist/ "$SERVER:/var/www/bawer/site/"
-rsync -az --delete console/dist/  "$SERVER:/var/www/bawer/admin/"
-
-echo "==> Выкладка бэкенда"
-rsync -az --delete \
-  --exclude venv --exclude config.ini --exclude media --exclude logs \
-  --exclude '*.egg-info' --exclude '__pycache__' \
-  backend/ "$SERVER:/opt/alu-factory/backend/"
-rsync -az --delete deploy/ "$SERVER:/opt/alu-factory/deploy/"
-
-echo "==> Зависимости и рестарт"
-ssh "$SERVER" '
-  set -e
-  cd /opt/alu-factory
-  [ -d backend/venv ] || python3 -m venv backend/venv
-  backend/venv/bin/pip install -q -r backend/requirements.txt
-  if systemctl list-unit-files | grep -q alu-crm; then
-    sudo systemctl restart alu-crm alu-sip
-  fi
-'
-echo "==> Готово"
-```
+### A10. `deploy/deploy.sh` (запускается с Mac)
+Заливает на сервер исходники `frontend/`, `console/` (без `node_modules` и `dist`), `backend/` и `deploy/`, затем по SSH на сервере: `npm ci && npm run build` для обоих фронтендов, копирует `dist/` в `/var/www/bawer/site` и `/var/www/bawer/admin`, ставит Python-зависимости и перезапускает `alu-crm`/`alu-sip`. Node.js на Mac не нужен.
 
 ---
 
@@ -285,6 +252,11 @@ sudo ufw enable
 sudo apt install -y nginx postgresql redis-server \
   python3-venv python3-dev build-essential libpq-dev libmagic1 \
   rsync certbot python3-certbot-nginx
+
+# Node.js 22 для сборки frontend/console (Vite 8 требует Node >= 20.19)
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v               # v22.x
 ```
 
 ### Шаг 5. Урезать память Redis и PostgreSQL
@@ -307,7 +279,7 @@ sudo -u postgres psql -c "CREATE DATABASE alufactory OWNER alufactory;"
 
 ### Шаг 7. Каталоги
 ```bash
-sudo mkdir -p /opt/alu-factory/backend/media /opt/alu-factory/backend/logs /var/www/bawer/site /var/www/bawer/admin
+sudo mkdir -p /opt/alu-factory/frontend /opt/alu-factory/console /opt/alu-factory/backend/media /opt/alu-factory/backend/logs /var/www/bawer/site /var/www/bawer/admin
 sudo chown -R alu:alu /opt/alu-factory /var/www/bawer
 sudo chmod o+x /opt /opt/alu-factory /opt/alu-factory/backend     # nginx (www-data) должен дойти до media
 chmod -R o+rX /opt/alu-factory/backend/media
@@ -331,7 +303,7 @@ rm ~/alufactory.dump
 chmod +x deploy/deploy.sh
 SERVER=alu@<IP> ./deploy/deploy.sh
 ```
-Скрипт соберёт оба фронтенда, зальёт статику и бэкенд, создаст venv и поставит зависимости. Рестарт сервисов пропустится — их ещё нет.
+Скрипт зальёт исходники, соберёт оба фронтенда на сервере, опубликует статику, создаст venv и поставит зависимости. Рестарт сервисов пропустится — их ещё нет.
 
 ### Шаг 10. `config.ini` на сервере
 Сгенерировать ключ: `python3 -c "import secrets; print(secrets.token_hex(32))"`
