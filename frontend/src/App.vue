@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
@@ -31,7 +31,26 @@ function onAfterEnter() {
   ScrollTrigger.refresh()
 }
 
+// Pick up console edits (logo, name, contacts) when the visitor returns.
+function onVisibilityChange() {
+  if (document.visibilityState === 'visible') site.refresh()
+}
+
+// Use the uploaded company logo as the favicon; /favicon.svg otherwise.
+watch(
+  () => site.company?.logo?.url,
+  (url) => {
+    const link = document.querySelector('link[rel="icon"]')
+    if (!link) return
+    link.href = url || '/favicon.svg'
+    link.type = url ? '' : 'image/svg+xml'
+  },
+)
+
+onBeforeUnmount(() => document.removeEventListener('visibilitychange', onVisibilityChange))
+
 onMounted(async () => {
+  document.addEventListener('visibilitychange', onVisibilityChange)
   startLenis()
   const started = Date.now()
   await Promise.race([site.load(), new Promise((r) => setTimeout(r, MAX_PRELOADER_MS))])

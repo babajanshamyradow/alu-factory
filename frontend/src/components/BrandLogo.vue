@@ -1,13 +1,34 @@
 <script setup>
-// Same mark as console/src/components/BrandLogo.vue.
+import { computed, ref, watch } from 'vue'
+
+import { useSiteStore } from '@/stores/site'
+
+// Shows the logo uploaded in the console (Company → logo); falls back to the
+// built-in mark (same as console/src/components/BrandLogo.vue) when there is
+// none or it fails to load.
 defineProps({
   size: { type: Number, default: 40 },
 })
+const site = useSiteStore()
 const gradientId = `site-logo-${Math.random().toString(36).slice(2, 8)}`
+
+const logoUrl = computed(() => site.company?.logo?.url || null)
+const failed = ref(false)
+watch(logoUrl, () => (failed.value = false))
 </script>
 
 <template>
-  <svg class="brand-logo" :width="size" :height="size" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+  <img
+    v-if="logoUrl && !failed"
+    class="brand-logo brand-logo--img"
+    :src="logoUrl"
+    :width="size"
+    :height="size"
+    alt=""
+    aria-hidden="true"
+    @error="failed = true"
+  />
+  <svg v-else class="brand-logo" :width="size" :height="size" viewBox="0 0 40 40" fill="none" aria-hidden="true">
     <defs>
       <linearGradient :id="gradientId" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
         <stop stop-color="#4361ee" />
@@ -25,5 +46,9 @@ const gradientId = `site-logo-${Math.random().toString(36).slice(2, 8)}`
 .brand-logo {
   flex-shrink: 0;
   display: block;
+}
+
+.brand-logo--img {
+  object-fit: contain;
 }
 </style>

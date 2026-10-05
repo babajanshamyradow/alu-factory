@@ -25,9 +25,14 @@ documents/
 # Compiled Python bytecode
 *.py[cod]
 
-# Log files
+# Log files (incl. rotated ones like crm.log.2026-09-28)
 *.log
-logs/*
+*.log.*
+logs/
+backend/logs/
+
+# Uploaded media (images uploaded via the console)
+backend/media/
 
 # Package files
 *.jar
