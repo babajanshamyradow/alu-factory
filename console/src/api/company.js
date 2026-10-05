@@ -14,3 +14,6 @@ export const updateCompanyImage = (id, payload) => http.put(`/api/company/images
 // ids: every gallery image id in the new order.
 export const reorderCompanyImages = (ids) => http.put('/api/company/images/order', { ids })
 export const deleteCompanyImage = (id) => http.delete(`/api/company/images/${id}`)
+
+// Public (no session needed): name + logo for the login page, sidebar and favicon.
+export const getCompanyBrand = () => http.get('/api/company/brand')

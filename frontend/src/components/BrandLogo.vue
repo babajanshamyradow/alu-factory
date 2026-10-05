@@ -3,14 +3,12 @@ import { computed, ref, watch } from 'vue'
 
 import { useSiteStore } from '@/stores/site'
 
-// Shows the logo uploaded in the console (Company → logo); falls back to the
-// built-in mark (same as console/src/components/BrandLogo.vue) when there is
-// none or it fails to load.
+// The logo uploaded in the console (Company → logo); renders nothing until
+// one is set.
 defineProps({
   size: { type: Number, default: 40 },
 })
 const site = useSiteStore()
-const gradientId = `site-logo-${Math.random().toString(36).slice(2, 8)}`
 
 const logoUrl = computed(() => site.company?.logo?.url || null)
 const failed = ref(false)
@@ -20,7 +18,7 @@ watch(logoUrl, () => (failed.value = false))
 <template>
   <img
     v-if="logoUrl && !failed"
-    class="brand-logo brand-logo--img"
+    class="brand-logo"
     :src="logoUrl"
     :width="size"
     :height="size"
@@ -28,27 +26,12 @@ watch(logoUrl, () => (failed.value = false))
     aria-hidden="true"
     @error="failed = true"
   />
-  <svg v-else class="brand-logo" :width="size" :height="size" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-    <defs>
-      <linearGradient :id="gradientId" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#4361ee" />
-        <stop offset="0.55" stop-color="#3a86ff" />
-        <stop offset="1" stop-color="#4cc9f0" />
-      </linearGradient>
-    </defs>
-    <rect width="40" height="40" rx="11" :fill="`url(#${gradientId})`" />
-    <path class="brand-logo__a" d="M11 29 L20 10 L29 29" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
-    <path class="brand-logo__bar" d="M15 22.5 H25" stroke="#fff" stroke-width="3.2" stroke-linecap="round" opacity="0.7" />
-  </svg>
 </template>
 
 <style scoped>
 .brand-logo {
   flex-shrink: 0;
   display: block;
-}
-
-.brand-logo--img {
   object-fit: contain;
 }
 </style>

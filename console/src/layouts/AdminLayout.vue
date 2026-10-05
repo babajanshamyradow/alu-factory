@@ -10,6 +10,7 @@ import { useAuthStore } from '@/stores/auth'
 import LangSwitcher from '@/components/LangSwitcher.vue'
 import ThemeToggle from '@/components/ThemeToggle.vue'
 import BrandLogo from '@/components/BrandLogo.vue'
+import { useBrandStore } from '@/stores/brand'
 import ChangePasswordDialog from '@/components/ChangePasswordDialog.vue'
 import { useNewContactCount } from '@/composables/useNewContactCount'
 
@@ -17,6 +18,7 @@ const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 const authStore = useAuthStore()
+const brand = useBrandStore()
 
 const MOBILE_BREAKPOINT = 992
 const isMobile = ref(window.innerWidth < MOBILE_BREAKPOINT)
@@ -77,7 +79,7 @@ async function handleLogout() {
         <BrandLogo :size="34" />
         <transition name="fade">
           <div v-if="!collapsed" class="sidebar__brand-text">
-            <strong>Alu-Factory</strong>
+            <strong>{{ brand.displayName }}</strong>
             <span>{{ t('app.console') }}</span>
           </div>
         </transition>

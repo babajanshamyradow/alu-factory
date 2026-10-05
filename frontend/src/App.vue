@@ -36,14 +36,18 @@ function onVisibilityChange() {
   if (document.visibilityState === 'visible') site.refresh()
 }
 
-// Use the uploaded company logo as the favicon; /favicon.svg otherwise.
+// The uploaded company logo is the favicon; none until one is set.
 watch(
   () => site.company?.logo?.url,
   (url) => {
-    const link = document.querySelector('link[rel="icon"]')
-    if (!link) return
-    link.href = url || '/favicon.svg'
-    link.type = url ? '' : 'image/svg+xml'
+    let link = document.querySelector('link[rel="icon"]')
+    if (!url) return link?.remove()
+    if (!link) {
+      link = document.createElement('link')
+      link.rel = 'icon'
+      document.head.appendChild(link)
+    }
+    link.href = url
   },
 )
 

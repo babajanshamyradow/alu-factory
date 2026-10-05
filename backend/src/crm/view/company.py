@@ -100,6 +100,24 @@ def company_get():
         return 'ERROR', ['internal-server-error'], None
 
 
+@bp.route('/company/brand', methods=['GET'])
+@api_response
+def company_brand():
+    """Company name + logo for the console chrome (login page, sidebar,
+    favicon). Public: the login page needs it before there is a session."""
+    log.debug('%s - %s: company.brand', get_remote_ip(), request.method)
+
+    try:
+        company = company_access.get()
+        if company is None:
+            return 'SUCCESS', [], None
+        return 'SUCCESS', [], {'company-name': company.company_name,
+                               'logo': media_json(company.logo_media)}
+    except Exception:
+        log.exception('%s - %s: company.brand error', get_remote_ip(), request.method)
+        return 'ERROR', ['internal-server-error'], None
+
+
 @bp.route('/company', methods=['POST'])
 @roles_required(UserRole.superuser, UserRole.admin)
 @api_response
