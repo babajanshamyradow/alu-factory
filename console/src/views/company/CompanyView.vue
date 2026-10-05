@@ -6,11 +6,13 @@ import { OfficeBuilding, Location } from '@element-plus/icons-vue'
 
 import { getCompany, createCompany, updateCompany } from '@/api/company'
 import { useAuthStore } from '@/stores/auth'
+import { useBrandStore } from '@/stores/brand'
 import MediaUploader from '@/components/MediaUploader.vue'
 import CompanyGallery from './CompanyGallery.vue'
 
 const { t } = useI18n()
 const authStore = useAuthStore()
+const brand = useBrandStore()
 
 // Mirrors backend view/company.py.
 const PHONE_RE = /^\+?[0-9][0-9\s()-]{3,48}$/
@@ -134,6 +136,7 @@ async function submit() {
       exists.value = true
       creating.value = false
       fill(data.result)
+      brand.set(data.result)
     } else {
       const codes = data['error-msg'] || []
       ElMessage.error(codes.map((c) => t(`errors.${c}`, c)).join(', '))

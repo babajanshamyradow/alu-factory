@@ -52,12 +52,6 @@ defineProps({
   animation: logo-pop 1.2s var(--ease-out) both;
 }
 
-.preloader__logo :deep(.brand-logo__a) {
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  animation: draw 1.2s 0.3s var(--ease-out) forwards;
-}
-
 .preloader__bar {
   width: 160px;
   height: 3px;
@@ -88,12 +82,6 @@ defineProps({
   from {
     transform: scale(0.6) rotate(-12deg);
     opacity: 0;
-  }
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
   }
 }
 

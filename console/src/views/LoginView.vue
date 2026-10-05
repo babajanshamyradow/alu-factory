@@ -8,11 +8,13 @@ import { useAuthStore } from '@/stores/auth'
 import LangSwitcher from '@/components/LangSwitcher.vue'
 import ThemeToggle from '@/components/ThemeToggle.vue'
 import BrandLogo from '@/components/BrandLogo.vue'
+import { useBrandStore } from '@/stores/brand'
 
 const { t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 const authStore = useAuthStore()
+const brand = useBrandStore()
 
 const formRef = ref(null)
 const submitting = ref(false)
@@ -61,7 +63,7 @@ async function handleSubmit() {
 
       <div class="brand-panel__top">
         <BrandLogo :size="40" />
-        <span class="brand-panel__name">Alu-Factory</span>
+        <span class="brand-panel__name">{{ brand.displayName }}</span>
       </div>
 
       <div class="brand-panel__body">
@@ -69,7 +71,7 @@ async function handleSubmit() {
         <p>{{ t('login.brandText') }}</p>
       </div>
 
-      <div class="brand-panel__footer">© {{ new Date().getFullYear() }} Alu-Factory</div>
+      <div class="brand-panel__footer">© {{ new Date().getFullYear() }} {{ brand.displayName }}</div>
     </section>
 
     <!-- Form panel -->
